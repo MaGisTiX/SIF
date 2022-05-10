@@ -1,0 +1,17 @@
+const alphabet = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+const text = "Jdu od otorinolaringologa";
+
+var encrypted = encrypt_decrypt(text);
+var decrypted = encrypt_decrypt(encrypted);
+console.log(`T: ${text} -> ${encrypted} -> ${decrypted}`);
+
+function encrypt_decrypt(text) {
+	text = text.replaceAll(" ","").toUpperCase();
+	var result = "";
+	for (let i = 0; i < text.lenght; i++) {
+		let index = alphabet.indexOf(text[i]);
+		let ch = alphabet[alphabet.length - index - 1];
+		result += ch;
+	} 
+	return result;
+}
